@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://chdctndnj2pes"]
+
+[ext_resource type="Script" path="res://source/UI/game_form.gd" id="1_cn068"]
+[ext_resource type="FontFile" uid="uid://bj4wlflwm0lq7" path="res://assets/fonts/SourceHanSansSC-Regular-2.otf" id="1_l4aik"]
+[ext_resource type="PackedScene" uid="uid://bi2125tbja25l" path="res://source/UI/w_game_over.tscn" id="3_7sd02"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2q38"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="GameForm" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_cn068")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="lab_coin" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_l4aik")
+text = "金币：999999"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="pb_health" type="ProgressBar" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_l4aik")
+theme_override_styles/fill = SubResource("StyleBoxFlat_d2q38")
+value = 30.0
+show_percentage = false
+
+[node name="lab_health" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "99/100"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="w_game_over" parent="." instance=ExtResource("3_7sd02")]
+process_mode = 3
+layout_mode = 1
+offset_left = -130.0
+offset_top = -92.0
+offset_right = 130.0
+offset_bottom = 92.0

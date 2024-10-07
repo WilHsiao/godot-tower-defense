@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsdyi2ndcou0j"]
+
+[ext_resource type="PackedScene" uid="uid://tuhmc1huq554" path="res://source/actor/tower.tscn" id="1_qql0f"]
+[ext_resource type="Texture2D" uid="uid://rni2e0tvmgwj" path="res://assets/textures/tower/tower_fort_03.tres" id="2_oho11"]
+[ext_resource type="PackedScene" uid="uid://cht64q78v324e" path="res://source/actor/bullet/bullet_linear.tscn" id="2_tu7wu"]
+
+[node name="Tower" instance=ExtResource("1_qql0f")]
+P_BULLET = ExtResource("2_tu7wu")
+cooldown = 5.0
+damage = 150.0
+cost = 100
+
+[node name="SpriteTower" parent="Fort" index="0"]
+texture = ExtResource("2_oho11")

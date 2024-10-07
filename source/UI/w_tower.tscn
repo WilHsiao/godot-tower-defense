@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr3mr8wmu1rg8"]
+
+[ext_resource type="PackedScene" uid="uid://tuhmc1huq554" path="res://source/actor/tower.tscn" id="1_hvrya"]
+[ext_resource type="Script" path="res://source/UI/w_tower.gd" id="1_rsire"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ld83"]
+bg_color = Color(0.920995, 0.920995, 0.920995, 1)
+
+[node name="w_tower" type="MarginContainer"]
+custom_minimum_size = Vector2(64, 64)
+script = ExtResource("1_rsire")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4ld83")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="MarginContainer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(64, 64)
+render_target_update_mode = 4
+
+[node name="Node2D" type="Node2D" parent="MarginContainer/SubViewportContainer/SubViewport"]
+position = Vector2(32, 32)
+scale = Vector2(0.5, 0.5)
+
+[node name="Tower" parent="MarginContainer/SubViewportContainer/SubViewport/Node2D" instance=ExtResource("1_hvrya")]
+cost = 20
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/margin_right = 4
+
+[node name="label_cost" type="Label" parent="MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "999"

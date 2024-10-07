@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cht64q78v324e"]
+
+[ext_resource type="PackedScene" uid="uid://smyyaucupbsi" path="res://source/actor/bullet.tscn" id="1_tuli6"]
+[ext_resource type="Script" path="res://source/actor/bullet/bullet_linear.gd" id="2_cks1o"]
+[ext_resource type="Texture2D" uid="uid://ctu87t0i3d8sj" path="res://assets/textures/bullet/bullet_06.tres" id="3_5fthd"]
+
+[node name="Bullet" instance=ExtResource("1_tuli6")]
+script = ExtResource("2_cks1o")
+speed = 1000.0
+
+[node name="Sprite2D" parent="." index="0"]
+rotation = 1.5708
+texture = ExtResource("3_5fthd")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddvuja473abwq"]
+
+[ext_resource type="PackedScene" uid="uid://tuhmc1huq554" path="res://source/actor/tower.tscn" id="1_kwtw5"]
+
+[node name="Tower" instance=ExtResource("1_kwtw5")]
+cooldown = 2.0

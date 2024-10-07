@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4klvcqov32qp"]
+
+[ext_resource type="Script" path="res://source/actor/enemy.gd" id="1_wovnb"]
+[ext_resource type="Texture2D" uid="uid://md566k8v34tv" path="res://assets/textures/enemy/enemy_01.tres" id="2_uo1xq"]
+[ext_resource type="AudioStream" uid="uid://k3sjvxtm4mh8" path="res://assets/sound/hit3.ogg" id="3_teodb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uudj3"]
+radius = 32.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4wfl"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="Enemy" type="PathFollow2D" groups=["actor"]]
+script = ExtResource("1_wovnb")
+speed = 100.0
+max_hp = 60.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("2_uo1xq")
+
+[node name="Area2D" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_uudj3")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -48.0
+offset_top = -65.0
+offset_right = 48.0
+offset_bottom = -52.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_r4wfl")
+value = 30.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="audio_die" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_teodb")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://tuhmc1huq554"]
+
+[ext_resource type="Script" path="res://source/actor/tower.gd" id="1_dbdyu"]
+[ext_resource type="Texture2D" uid="uid://bqjwrvxst3o0p" path="res://assets/textures/tower/tower_base_01.tres" id="2_kw1i5"]
+[ext_resource type="Texture2D" uid="uid://dt30bhiydluh4" path="res://assets/textures/tower/tower_fort_02.tres" id="3_8tvii"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dgrv4"]
+radius = 288.0
+
+[node name="Tower" type="Node2D" groups=["actor"]]
+script = ExtResource("1_dbdyu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_kw1i5")
+
+[node name="Fort" type="Node2D" parent="."]
+
+[node name="SpriteTower" type="Sprite2D" parent="Fort"]
+rotation = 1.5708
+texture = ExtResource("3_8tvii")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_dgrv4")
+
+[node name="AudioExplosion" type="AudioStreamPlayer" parent="."]
