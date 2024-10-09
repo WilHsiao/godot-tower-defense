@@ -1,7 +1,7 @@
 extends Node2D
 class_name Tower
 
-@onready var sprite_tower: Sprite2D = $SpriteTower
+@onready var sprite_tower: Sprite2D = get_node_or_null("SpriteTower")
 @onready var area_2d: Area2D = $Area2D
 @onready var fort: Node2D = $Fort
 @onready var audio_explosion: AudioStreamPlayer = $AudioExplosion

@@ -54,7 +54,7 @@ func _ready() -> void:
 	game_form.update_health_display(current_health, max_health)
 	game_form.initialize(_towers)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	perview_tower()
 
 func _unhandled_input(event: InputEvent) -> void:

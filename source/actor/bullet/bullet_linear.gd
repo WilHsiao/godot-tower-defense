@@ -31,7 +31,7 @@ func spawn_explotion() -> Explotion:
 	return explotion
 
 func attack(enemy : Enemy) -> void:
-	var explotion = spawn_explotion()
-	await explotion.exploted
+	call_deferred("spawn_explotion")
+	await get_tree().create_timer(0.1).timeout  # 給予足夠的時間讓 deferred call 執行
 	if is_instance_valid(enemy):
 		super(enemy)
