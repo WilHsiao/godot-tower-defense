@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bwwd4kkcbkaaf" path="res://assets/textures/enemy/enemy_02.tres" id="2_ntyye"]
 
 [node name="Enemy" instance=ExtResource("1_h8mr8")]
-speed = 140.0
+speed = 150.0
 max_hp = 40.0
 attack = 5.0
 loot_coin = 20

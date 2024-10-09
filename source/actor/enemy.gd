@@ -16,6 +16,7 @@ class_name Enemy
 			progress_bar.show()
 		if current_hp <= 0:
 			_die()
+
 @export var attack : float = 10
 ## 击杀时候获得的金币数量
 @export var loot_coin : int = 10
@@ -32,16 +33,16 @@ func _process(delta: float) -> void:
 	sprite_2d.rotation = rotation
 	rotation = 0
 	if progress_ratio >= 0.99:
-		damage()
+		deal_damage()
 		queue_free()
 		get_parent().remove_child(self)
 
 ## 受到伤害
-func hit(damage : float) -> void:
-	current_hp -= damage
+func hit(damage_amount : float) -> void:
+	current_hp -= damage_amount
 
 ## 造成伤害
-func damage() -> void:
+func deal_damage() -> void:
 	damaged.emit(attack)
 
 ## 角色死亡

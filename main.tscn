@@ -340,8 +340,7 @@ start_coin = 200
 _towers = Array[PackedScene]([ExtResource("3_too2k"), ExtResource("4_muq52"), ExtResource("5_3up1o"), ExtResource("6_dlu47")])
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(0, -48)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.68, 0.68)
 tile_set = SubResource("TileSet_3kpw0")
 format = 2
 layer_0/name = "BG"
